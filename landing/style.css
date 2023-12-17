@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  transition: all 0.3s ease-in-out;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #292929;
+}
+
+a, ul {
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+
+.main__title {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -1.5px;
+  margin-bottom: 64px;
+  text-align: center;
+}
+@media screen and (max-width: 820px) {
+  .main__title {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main__title {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+}
+
+/* ============================== HEADER STYLES ==================================== */
+.header {
+  background-image: url('assets/images/mainBackground.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  transition: ease .3s;
+}
+
+.wrapper {
+  margin: 0 120px;
+}
+@media screen and (max-width: 820px) {
+  .wrapper {
+    margin: 0 72px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    margin: 0 20px;
+  }
+}
+
+.header__items {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 64px 120px;
+  z-index: 1;
+  transition: ease .3s;
+}
+.hide {
+  background-color: #E8EFF9;
+  transition: ease .3s;
+  padding: 20px 120px;
+}
+
+
+.header__info {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: start;
+}
+
+.header__items-action {
+  width: 24px;
+  height: 24px;
+  background-image: url('assets/icons/burgerDefault.png');
+}
+
+.header__items-action:hover {
+  background-image: url('assets/icons/burgerHover.png');
+}
+
+.header__info-icon {
+  width: 64px;
+  height: 76px;
+}
+.header__info-title {
+  font-size: 48px;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 100%;
+  letter-spacing: -1.5px;
+}
+@media screen and (max-width: 820px) {
+  .header {
+    background-image: url('assets/images/main-bg-tablet.png');
+  }
+  .header__items {
+    padding: 32px 72px;
+  }
+  .header__info-title {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    background-image: url('assets/images/main-bg-mobile.png');
+  }
+
+  .header__items-logo {
+    width: 127px;
+    height: 16px;
+  }
+  .header__items {
+    padding: 32px 20px;
+  }
+  .hdie {
+    padding: 28px 20px;
+  }
+
+  .header__info {
+    margin-bottom: 32px;
+    gap: 20px;
+  }
+
+  .header__info-icon {
+    width: 32px;
+    height: 38px;
+  }
+  .header__info-title {
+    font-size: 32px;
+  }
+}
+
+/* =================== BURGER MENU ============================== */
+.burger {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: #E8EFF9;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease;
+}
+
+.burger:target {
+  transform: translateX(0);
+}
+
+.burger__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 64px 0px;
+}
+
+.burger__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 24px;
+}
+
+.burger__link {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.burger__link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #292929;
+  transition: width .3s;
+  margin-top: 8px;
+}
+
+.burger__link:hover::after {
+  width: 100%;
+  transition: width .3s;
+}
+
+/* ====================== RECOMMENDED SECTION ============================ */
+.main {
+  background-color: #fff;
+  padding: 120px 0;
+}
+.recommended {
+  margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recommended__items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.recommended__item-img {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.item-title {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 140%;
+  margin-bottom: 8px;
+}
+
+.item-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+  margin-bottom: 12px;
+}
+
+.item-price {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+@media screen and (max-width: 820px) {
+  .recommended__items {
+    flex-direction: column;
+    width: auto;
+  }
+}
+
+/* ====================== PRODUCTS SECTION ============================ */
+
+.products {
+  margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products__item {
+  margin-bottom: 64px;
+  width: 100%;
+}
+
+.products__item:last-child {
+  margin-bottom: 0;
+}
+
+.products__item-images {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+  width: 100%;
+  height: 320px;
+}
+
+.products__headphones-mainImage {
+  background-image: url('assets/images/products/headphones-I.png');
+  background-size: 100% 100%;
+  width: 70%;
+}
+
+.products__headphones-subImage {
+  background-image: url('assets/images/products/headphones-II.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 30%;
+}
+
+.products__speakers-mainImage {
+  background-image: url('assets/images/products/speakers-I.png');
+  background-size: 100% 100%;
+  width: 70%;
+}
+
+.products__speakers-subImage {
+  background-image: url('assets/images/products/speakers-II.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 30%;
+}
+
+.products__sunglasses-mainImage {
+  background-image: url('assets/images/products/sunglasses-I.png');
+  background-size: 100% 100%;
+  width: 30%;
+}
+.products__sunglasses-subImage {
+  background-image: url('assets/images/products/sunglasses-II.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 70%;
+}
+
+.products__item-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 140%;
+  margin-bottom: 64px;
+}
+
+.products__item-title {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 820px) {
+  .products__item-images {
+    height: 187px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .products__image {
+    width: 50%;
+  }
+  .products__sunglasses-subImage {
+    background-image: url('assets/images/products/sunglasses-II-mobile.png');
+  }
+  .products__speakers-mainImage {
+    background-image: url('assets/images/products/speakers-I-mobile.png');
+  }
+  .products__headphones-mainImage {
+    background-image: url('assets/images/products/headphones-I-mobile.png');
+  }
+}
+
+/* ====================== ADVENTAGES SECTION ============================ */
+
+.adventages {
+  display: flex;
+  gap: 24px;
+}
+
+.adventages__title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -1.5px;
+  width: 50%;
+}
+
+.adventages__info {
+  width: 50%;
+}
+
+.info__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.info__nav-item {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.info__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+}
+@media screen and (max-width: 820px) {
+  .adventages__title {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .adventages {
+    flex-direction: column;
+  }
+  .adventages__title {
+    width: auto;
+  }
+  .adventages__info {
+    width: auto;
+  }
+}
+
+/* ====================================== */
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
+  background-image: url('assets/images/footer-image.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 460px;
+}
+@media screen and (max-width: 820px) {
+  .footer {
+    background-image: url('assets/images/footer-image-tablet.png');
+    height: 400px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer {
+    background-image: url('assets/images/footer-image-mobile.png');
+    height: 200px;
+  }
+}
